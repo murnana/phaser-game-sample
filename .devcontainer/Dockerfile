@@ -4,8 +4,18 @@ FROM node:24-alpine
 # npmの更新
 RUN npm install -g npm@11.11.0
 
-# Gitのインストール
-RUN apk add git
+# 依存ツールのインストール（キャッシュなし）
+RUN apk add --no-cache \
+    bash \
+    git \
+    github-cli \
+    gnupg
 
-# GitHub CLIのインストール
-RUN apk add github-cli
+# SHELL環境の設定
+ENV SHELL=/bin/sh
+
+# Claude Code: 自動メモリー作成の抑制
+ENV CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
+
+# デフォルトブランチの設定
+RUN git remote set-head origin main

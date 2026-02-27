@@ -7,6 +7,13 @@
 	"features": {
 		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
 	},
+	"forwardPorts": [8080],
+	"portsAttributes": {
+		"8080": {
+			"label": "Vite Dev Server",
+			"onAutoForward": "notify"
+		}
+	},
 	"postCreateCommand": "npm install --save-dev",
 	"remoteUser": "node"
 }
