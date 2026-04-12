@@ -16,6 +16,3 @@ ENV SHELL=/bin/sh
 
 # Claude Code: 自動メモリー作成の抑制
 ENV CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
-
-# デフォルトブランチの設定
-RUN git remote set-head origin main
