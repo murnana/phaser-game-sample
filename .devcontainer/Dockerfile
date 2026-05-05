@@ -2,14 +2,14 @@
 FROM node:24-alpine
 
 # npmの更新
-RUN npm install -g npm@11.11.0
+RUN npm install -g npm@11.13.0
 
 # 依存ツールのインストール（キャッシュなし）
 RUN apk add --no-cache \
     bash \
     git \
     github-cli \
-    gnupg
+    openssh-client
 
 # SHELL環境の設定
 ENV SHELL=/bin/sh
