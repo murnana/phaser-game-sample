@@ -1,19 +1,21 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
 	"name": "Phaser game sample",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
 	"features": {
-		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
-	},
-	"forwardPorts": [8080],
-	"portsAttributes": {
-		"8080": {
-			"label": "Vite Dev Server",
-			"onAutoForward": "notify"
-		}
+		// Claude Code — AI によるコーディング支援ツール
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
 	},
 	"postCreateCommand": "npm install --save-dev",
-	"remoteUser": "node"
+	"remoteUser": "node",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Anthropic.claude-code",
+				"github.vscode-github-actions",
+				"GitHub.vscode-codeql"
+			]
+		}
+	}
 }
