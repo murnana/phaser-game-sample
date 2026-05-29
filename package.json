@@ -13,6 +13,6 @@
     },
     "dependencies": {
         "phaser": "4.1.0",
-        "terser": "5.47.1"
+        "terser": "5.48.0"
     }
 }
