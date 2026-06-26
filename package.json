@@ -12,7 +12,7 @@
         "vite": "^8.0.16"
     },
     "dependencies": {
-        "phaser": "4.1.0",
+        "phaser": "4.2.0",
         "terser": "5.48.0"
     }
 }
